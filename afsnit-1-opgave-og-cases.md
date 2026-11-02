@@ -2,15 +2,13 @@
 
 ## Analysér forskellige incident response eksempler
 
-I kan herunder finde nogle udsagn fra en virksomheds it-sikkerhedspraksis. For hvert udsagn skal du:
+I kan herunder finde nogle udsagn fra virksomheders it-sikkerhedspraksis. For hvert udsagn skal I:
 
 1. **Identificér** de enkelte påstande i udsagnet (der er typisk 4–7 pr. udsagn).
 2. **Vurdér** hver påstand: korrekt, forkert eller delvist korrekt.
 3. **Korrigér** de forkerte elementer: hvad skulle virksomheden have gjort i stedet?
 4. **Prioritér**: peg på den fejl i udsagnet, der efter din mening er den *dyreste* i en reelt hændelse, og begrund, hvorfor den slår de andre.
 5. **Sammenfativ** til sidst: Hvilket gennemgående mønster ser du på tværs af udsagnene?
-
-**Kilde:** Rigspolitiets NC3 & Dansk IT: *Virksomhedsguide – Forholdsregler ved brud på it-sikkerhedssystemer* (se på Moodle).
 
 ---
 
@@ -32,4 +30,4 @@ I kan herunder finde nogle udsagn fra en virksomheds it-sikkerhedspraksis. For h
 
 ### Scenarie 5 — Business continuity: "Driften først, resten bagefter"
 
-> "Da ransomware krypterer filservere og ordresystem en søndag nat, er virksomheden forberedt: Beredskabsplanen fastslår, at kritiske systemer skal være genoprettet inden for 24 timer, og da backuppen er isoleret fra det øvrige netværk, er den heldigvis ikke krypteret. IT-chefen gendanner straks alt fra fredagens fulde backup – der er ingen tid at spilde på at sikre logs og hukommelsesbilleder, når fristen er 24 timer. Mandag morgen er driften oppe, kunderne underrettes med en pressemeddelelse, og medarbejderne får besked via en fælles e-mail. Onsdag afsløres det imidlertid, at angriberne havde bevæget sig rundt i systemet siden tirsdag ugen før – gendannelsen har altså blot genindsat den kompromitterede tilstand, og hele genoprettelsen starter forfra. Ledelsen konstaterer, at planen 'virkede', og beslutter derfor at droppe den efterfølgende evaluering – hvorfor rette noget, der ikke er i stykker?"
+> "Da ransomware krypterer filservere og ordresystem en søndag nat, er virksomheden forberedt: Beredskabsplanen fastslår, at kritiske systemer skal være genoprettet inden for 24 timer, og da backuppen er isoleret fra det øvrige netværk, er den heldigvis ikke krypteret. IT-chefen gendanner straks alt fra fredagens fulde backup, der er ingen tid at spilde på at sikre logs og hukommelsesbilleder, når fristen er 24 timer. Mandag morgen er driften oppe, kunderne underrettes med en pressemeddelelse, og medarbejderne får besked via en fælles e-mail. Onsdag afsløres det imidlertid, at angriberne havde bevæget sig rundt i systemet siden tirsdag ugen før, gendannelsen har altså blot genindsat den kompromitterede tilstand, og hele genoprettelsen starter forfra. Ledelsen konstaterer, at planen 'virkede', og beslutter derfor at droppe den efterfølgende evaluering, hvorfor rette noget, der ikke er i stykker?"
