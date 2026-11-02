@@ -1,6 +1,6 @@
 # Afsnit 2 · Facitliste (til studerende)
 
-## Case 1 — Beredskabet
+## Scenarie 1 — Beredskabet
 
 | Element | Vurdering |
 |---|---|
@@ -11,7 +11,7 @@
 | Straks genoprettelse fra backup uden bevissikring | **Forkert** – sikres beviserne grundlæggende ikke, inden systemerne gendannes, vanskeliggøres en evt. retssag |
 | Backup som netværksdrev på filserveren | **Forkert** – backup-systemet skal isoleres fra netværket; ellers krypterer ransomware den også |
 
-## Case 2 — Logning og tid
+## Scenarie 2 — Logning og tid
 
 | Element | Vurdering |
 |---|---|
@@ -22,7 +22,7 @@
 | Ny enhed uden tidssynkronisering | **Forkert** – der skal være procedurer, så nye enheder synkroniseres og eksisterende tjekkes |
 | Ugentligt tjek af SIEM | **Forkert** – "det er ikke nok med et ugentligt tjek"; systemerne bør monitoreres konstant, og hackerne arbejder sjældent 9–17 |
 
-## Case 3 — Bevissikring
+## Scenarie 3 — Bevissikring
 
 | Element | Vurdering |
 |---|---|
@@ -33,7 +33,7 @@
 | Kopier i privat OneDrive | **Forkert** (samme princip) – beviser skal sikres med dataintegritet og hash umiddelbart efter sikring, så man ikke arbejder på ændret data; adgangskontrol til materialet er del af integritetskravet |
 | Hashværdi af sikret data | **Korrekt fremgangsmåde**, hvis den nævnes – ellers et oplagt punkt for forbedringsforslag |
 
-## Case 4 — Kommunikation under angreb
+## Scenarie 4 — Kommunikation under angreb
 
 | Element | Vurdering |
 |---|---|
@@ -42,6 +42,18 @@
 | E-mail-varsling til alle, inkl. hackeren | **Forkert** – ved en decideret indtrængning bør e-mail undgås, da hackerne kan overvåge den og opdage, at de er afsløret |
 | Aktuelt kompromitteret system giver færrest beviser | **Forkert** – det er *omvendt*: ved et aktuelt kompromitteret system er der størst mulighed for at sikre beviser, for hackere skjuler deres færden, inden de forlader systemet |
 | Vent med politiet til der er fuldt overblik | **Forkert** – ved aktuelt kompromitteret system bør politiet inddrages *med det samme*, gerne via uformel henvendelse. Selve anmeldelsen sker i dag digitalt via politi.dk – se note nedenfor |
+
+## Scenarie 5 — Business continuity
+
+| Element | Vurdering |
+|---|---|
+| Defineret genoprettelsesfrist (24 timer) for kritiske systemer | **Korrekt** – krav til genoprettelsestid bør aftales og skrives ned på forhånd, så prioriteringen er klar, når hændelsen er løs |
+| Backup isoleret fra det øvrige netværk | **Korrekt** – backup-systemet skal isoleres fra netværket, så ransomware ikke når den også |
+| Straks gendannelse uden at sikre logs og RAM | **Forkert** – beviser skal sikres, *inden* systemerne gendannes; procedurerne skal sikre, at det kan ske hurtigt, ikke udelades |
+| Gendannelse fra nyeste backup uden kortlægning af gerningstidsrummet | **Forkert** – der kan være forberedende handlinger lang tid forud for hændelsen; vælges et gendannelsespunkt efter kompromitteringen, genindsættes angriberens fodfæste, og arbejdet starter forfra |
+| Pressemeddelelse som kundekommunikation | **Delvist korrekt** – en CIRP bør definere, hvem der må udtale sig til pressen og hvornår; kommunikationen skal være målrettet og rettidig – ikke automatisk ud til alle |
+| Medarbejdere underrettes via fælles e-mail | **Delvist forkert** – e-mail kan være nede eller kompromitteret; ved en indtrængning kan hackerne overvåge e-mailen, så alternative kanaler bør være planlagt |
+| Ingen evaluering eller opdatering af planen | **Forkert** – en CIRP skal vedligeholdes og trænes løbende; efter en hændelse skal der evaluering til, så næste søndag nat går bedre |
 
 ---
 
@@ -52,4 +64,4 @@ Guidens procedure ("anmeldelse indgives til det lokale politi") er delvist foræ
 - **Politianmeldelse:** Hacking, ransomware og DDoS anmeldes digitalt via [politi.dk → Anmeld kriminalitet → Digital kriminalitet](https://politi.dk/anmeld-kriminalitet/digital-kriminalitet). Kræver MitID – for virksomheder typisk MitID Erhverv. Alternativt: ring 114 eller mød personligt op på en politistation. Politiet sender kvittering med journalnummer i Digital Post.
 - **Tip ≠ anmeldelse** – et tip til politiet er ikke en anmeldelse.
 - **Datatilsynet:** Ved brud på persondatasikkerheden skal den dataansvarlige *desuden* anmelde bruddet til Datatilsynet via Virk.dk – uden unødig forsinkelse og om muligt senest 72 timer efter opdagelsen (GDPR art. 33). Ved høj risiko for de registrerede skal de også underrettes direkte (art. 34). Se [Datatilsynet: Anmeld sikkerhedsbrud](https://www.datatilsynet.dk/sikkerhedsbrud/anmeld-sikkerhedsbrud).
-- **NIS2:** Væsentlige og essentielle enheder (fx kritisk infrastruktur og digitale tjenester) har egne indberetningsfrister til cybermyndighederne: tidlig varsling inden 24 timer og underretning inden 72 timer.
+- **NIS2:** Væsentlige og essentielle enheder (fx kritisk infrastruktur og digitale tjenester) har egne indberetningsfrister til cybermyndighederne: tidlig varsling inden for 24 timer og underretning inden 72 timer.
