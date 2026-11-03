@@ -73,7 +73,7 @@ Samlet aflevering uploades på Moodle senest ved øvelsesperiodeens afslutning (
 
 ---
 
-## Øvelse 3 – Backup og verificering: Hash og diff af logfiler (45 min)
+## Øvelse 3 – Backup og verificering: Hash og diff af logfiler
 
 **Mål:** Tage backup af logfiler og verificere med hash og diff, at filer er ændret — og hvad ændringen indeholder.
 
@@ -100,9 +100,11 @@ Samlet aflevering uploades på Moodle senest ved øvelsesperiodeens afslutning (
 
 # Ekstraopgaver: Loganalyse med AI (til sidst)
 
-Udføres til sidst, hvis tiden tillader — ca. 15 minutter pr. opgave. Der bruges en AI-assistent (fx Mistral Vibe eller et tilsvarende værktøj godkendt af læreren).
+Udføres til sidst, hvis tiden tillader — ca. 15 minutter pr. opgave. Der bruges en AI-assistent (fx Mistral Vibe eller et tilsvarende værktøj godkendt af András).
 
-**Fælles regel:** Intet logudsnit indsættes i en AI, før det er anonymiseret (ekstraopgave 1). Der føres **prompt-log** for hver opgave: hvilke prompts blev brugt, hvad svarede AI'en — og ét konkret eksempel på, hvor AI'en tog fejl.
+**Fælles regel:** Intet logudsnit indsættes i en AI, før det er anonymiseret (ekstraopgave 1). 
+
+Der føres **prompt-log** for hver opgave: hvilke prompts blev brugt, hvad svarede AI'en — og ét konkret eksempel på, hvor AI'en tog fejl.
 
 ## Ekstraopgave 1 – Anonymisering før AI 
 
