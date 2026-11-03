@@ -1,22 +1,34 @@
-# Log-øvelser: Tre parvise øvelser i at finde, læse og verificere logfiler — med AI-ekstraopgaver
+# Log-øvelser: Find, læs og verificere logfiler — med AI-ekstraopgaver
 
-**Hold:** parvis (2 studerende) · **Tid:** 3 × 45 minutter med 10 minutters pause mellem øvelserne · **Ekstraopgaver med AI til sidst** (ca. 15 min. pr. opgave) · **Udstyr:** egne Windows-, macOS- eller Linux-maskiner
+**Hold:** parvis (2 studerende) · **Tid:** Ca. 3 × 45 minutter med 10 minutters pause mellem øvelserne **Udstyr:** egne Windows-, macOS- eller Linux-maskiner
 
-**Læringsudbytte:** Efter øvelserne kan den studerende finde og læse logfiler på Windows, macOS og Linux — og bruge AI som analyseværktøj samt verificere AI'ens output.
+**Læringsudbytte:** Efter øvelserne kan I finde og læse logfiler på Windows, macOS og Linux, og bruge AI som analyseværktøj samt verificere AI'ens output.
 
-**Rammer:** Øvelserne udføres kun på skolens netværk og kun med makkerens udtrykkelige tilladelse. Fjernstyring i øvelse 2 sker med AnyDesk, TeamViewer eller lignende. Alle kommandoeksempler i øvelserne bruger operativsystemets indbyggede (native) kommandoer og værktøjer. Fjernstyringsværktøjet afinstalleres umiddelbart efter øvelse 2. AI-ekstraopgaverne udføres kun med anonymiserede data.
+**OBS:** Fjernstyring i øvelse 2 sker med AnyDesk, TeamViewer eller lignende. Fjernstyringsværktøjet afinstalleres umiddelbart efter øvelse 2. AI-ekstraopgaverne udføres med anonymiserede data.
 
 ---
 
-## Øvelse 1 – Log-safari og makker-analyse (45 min)
+# Aflevering på Moodle
 
-**Mål:** Blive fortrolig med hvor logfiler ligger, hvordan de er opbygget — og analysere et logudsnit, man ikke selv har produceret.
+Samlet aflevering uploades på Moodle senest ved øvelsesperiodeens afslutning (én aflevering pr. par):
+
+1. Notat, tidslinje og hændelsesrapport fra øvelse 1
+2. Tre fund samt refleksion fra øvelse 2 (begge roller) + bekræftelse af, at fjernstyringsværktøjet er afinstalleret
+3. Hash-tabel og diff-uddrag fra øvelse 3
+4. Udførte ekstraopgaver: anonymiseret udsnit, feltforklaring, rival-sammenligning og stillingtagen
+5. Prompt-log: anvendte prompts, AI-svar og ét konkret eksempel på, hvor AI'en tog fejl
+
+---
+
+## Øvelse 1 – Log-safari og makker-analyse 
+
+**Mål:** Bliv fortrolig med hvor logfiler ligger, hvordan de er opbygget, og analysere et logudsnit, man ikke selv har produceret.
 
 1. Find logfilerne på din maskine:
    - **Windows:** `Event Viewer` (kør: `eventvwr.msc`) — se især *Windows Logs* → *System* og *Application*.
    - **macOS:** *Console*-appen samt mappen `/var/log/` og kommandoen `log show --last 1h`.
    - **Linux:** `less /var/log/syslog` eller `journalctl --since "1 hour ago"`; gennemgå også `/var/log/` med `ls -l`.
-2. Notér individuelt: Hvor ligger filerne? Hvad hedder de? Hvad er formatet (tekst, XML, tidsstempel, alvorlighedsgrad)?
+2. Notér individuelt: Hvor ligger filerne? Hvad hedder de? Hvad er formatet (tekst, XML, tidsstempel, alvorlighedsgrad)? Er nogle komprimerede?
 3. Find én konkret hændelse fra det seneste døgn, som du selv har forårsaget (login, fejlbesked, opdatering).
 4. **Eksportér et udsnit** af en log (fx de seneste 50–100 linjer, eller en eksport fra Event Viewer som `.txt`/`.evtx`).
 5. **Byt fil med makkeren.** Ejeren giver ingen hjælp under analysen.
@@ -28,17 +40,15 @@
 
 ---
 
-## Pause 1 (10 min) — Opsamling i plenum
-
-Hvad er den største forskel på logformaterne på Windows, macOS og Linux? Hvilket OS logfæster mest — og hvad betyder det for efterforskning? Hvorfor tolkede nogen par loggen forkert — og hvordan stillede man de rigtige spørgsmål uden at afsløre svaret?
+## Pause 1  
 
 ---
 
-## Øvelse 2 – Fjernstyring: Find makkerens logs med AnyDesk eller TeamViewer (45 min)
+## Øvelse 2 – Fjernstyring: Find makkerens logs med AnyDesk eller TeamViewer 
 
-**Mål:** Navigere i logfiler på en maskine, man ikke sidder ved, via et fjernstyringsværktøj — og bruge operativsystemets egne kommandoer til at finde loggene.
+**Mål:** Naviger i logfiler på en maskine, man ikke sidder ved, via et fjernstyringsværktøj, og bruge operativsystemets egne kommandoer til at finde loggene.
 
-> **OBS:** Kun på skolens netværk og kun med makkerens samtykke. Værktøjet afinstalleres umiddelbart efter øvelsen.
+> **OBS:**  Værktøjet afinstalleres umiddelbart efter øvelsen.
 
 1. Installer **AnyDesk** eller **TeamViewer** (eller et lignende værktøj godkendt af læreren) på begge maskiner.
 2. Makkeren deler sit ID og adgangskode; du opretter forbindelse og overtager styringen af skrivebordet.
@@ -54,9 +64,8 @@ Hvad er den største forskel på logformaterne på Windows, macOS og Linux? Hvil
 
 ---
 
-## Pause 2 (10 min) — Opsamling i plenum
+## Pause 2
 
-Hvad er forskellen på at sidde ved og at fjernstyre en maskine? Hvilke tilladelser giver man væk, når man deler sit ID og sin adgangskode — og hvorfor er det vigtigt, at værktøjet afinstalleres efter brug? Brug pausen til at sikre, at afinstallationen er gennemført på begge maskiner.
 
 ---
 
@@ -91,7 +100,7 @@ Udføres til sidst, hvis tiden tillader — ca. 15 minutter pr. opgave. Der brug
 
 **Fælles regel:** Intet logudsnit indsættes i en AI, før det er anonymiseret (ekstraopgave 1). Der føres **prompt-log** for hver opgave: hvilke prompts blev brugt, hvad svarede AI'en — og ét konkret eksempel på, hvor AI'en tog fejl.
 
-## Ekstraopgave 1 – Anonymisering før AI (15 min)
+## Ekstraopgave 1 – Anonymisering før AI 
 
 **Mål:** Fjerne persondata fra et logudsnit, før det deles med en AI — og forstå, hvilke felter der bærer hvilke oplysninger.
 
@@ -104,7 +113,7 @@ Udføres til sidst, hvis tiden tillader — ca. 15 minutter pr. opgave. Der brug
 
 **Leverance:** Anonymiseret udsnit samt de anvendte kommandoer.
 
-## Ekstraopgave 2 – AI som ordbog (15 min)
+## Ekstraopgave 2 – AI som ordbog 
 
 **Mål:** Bruge AI til at forstå logformatets opbygning — og verificere forklaringen.
 
@@ -114,7 +123,7 @@ Udføres til sidst, hvis tiden tillader — ca. 15 minutter pr. opgave. Der brug
 
 **Leverance:** Feltforklaring samt notat om, hvor og hvordan forklaringen blev verificeret.
 
-## Ekstraopgave 3 – AI som rival, ikke assistent (15 min)
+## Ekstraopgave 3 – AI som rival, ikke assistent 
 
 **Mål:** Sammenligne egen analyse med AI'ens — og verificere AI'ens udsagn mod råloggen.
 
@@ -125,7 +134,7 @@ Udføres til sidst, hvis tiden tillader — ca. 15 minutter pr. opgave. Der brug
 
 **Leverance:** Sammenligning af de to analyser samt liste over verificerede og afkræftede citater.
 
-## Ekstraopgave 4 – AI-agent og fjernadgang (10 min, diskussion)
+## Ekstraopgave 4 – AI-agent og fjernadgang 
 
 **Mål:** Reflektere over AI-agenter i systemadministration på baggrund af øvelse 2.
 
@@ -134,14 +143,3 @@ Udføres til sidst, hvis tiden tillader — ca. 15 minutter pr. opgave. Der brug
 
 **Leverance:** Skriftlig stillingtagen.
 
----
-
-# Aflevering på Moodle
-
-Samlet aflevering uploades på Moodle senest ved øvelsesperiodeens afslutning (én aflevering pr. par):
-
-1. Notat, tidslinje og hændelsesrapport fra øvelse 1
-2. Tre fund samt refleksion fra øvelse 2 (begge roller) + bekræftelse af, at fjernstyringsværktøjet er afinstalleret
-3. Hash-tabel og diff-uddrag fra øvelse 3
-4. Udførte ekstraopgaver: anonymiseret udsnit, feltforklaring, rival-sammenligning og stillingtagen
-5. Prompt-log: anvendte prompts, AI-svar og ét konkret eksempel på, hvor AI'en tog fejl
