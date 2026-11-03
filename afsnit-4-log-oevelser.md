@@ -1,16 +1,16 @@
-# Log-øvelser: Fire parvise øvelser i at finde, læse og verificere logfiler
+# Log-øvelser: Tre parvise øvelser i at finde, læse og verificere logfiler — med AI-ekstraopgaver
 
-**Hold:** parvis (2 studerende) · **Tid:** 4 × 30 minutter med 10 minutters pause mellem øvelserne (samlet ca. 2 timer 40 min) · **Udstyr:** egne Windows-, macOS- eller Linux-maskiner
+**Hold:** parvis (2 studerende) · **Tid:** 3 × 45 minutter med 10 minutters pause mellem øvelserne · **Ekstraopgaver med AI til sidst** (ca. 15 min. pr. opgave) · **Udstyr:** egne Windows-, macOS- eller Linux-maskiner
 
-**Læringsudbytte:** Efter øvelserne kan den studerende lokalisere og genkende logformater på Windows, macOS og Linux; analysere og formidle hændelser ud fra logdata; fjernstyre en maskine og finde logfiler eksternt; samt tage backup af logfiler og verificere ændringer med hash-værdier og diff.
+**Læringsudbytte:** Efter øvelserne kan den studerende finde og læse logfiler på Windows, macOS og Linux — og bruge AI som analyseværktøj samt verificere AI'ens output.
 
-**Rammer:** Øvelserne udføres kun på skolens netværk og kun med makkerens udtrykkelige tilladelse. Fjernstyring i øvelse 3 sker med AnyDesk, TeamViewer eller lignende. Alle kommandoeksempler i øvelserne bruger operativsystemets indbyggede (native) kommandoer og værktøjer. Fjernstyringsværktøjet afinstalleres umiddelbart efter øvelse 3.
+**Rammer:** Øvelserne udføres kun på skolens netværk og kun med makkerens udtrykkelige tilladelse. Fjernstyring i øvelse 2 sker med AnyDesk, TeamViewer eller lignende. Alle kommandoeksempler i øvelserne bruger operativsystemets indbyggede (native) kommandoer og værktøjer. Fjernstyringsværktøjet afinstalleres umiddelbart efter øvelse 2. AI-ekstraopgaverne udføres kun med anonymiserede data.
 
 ---
 
-## Øvelse 1 – Log-safari: Find dine egne logfiler (30 min)
+## Øvelse 1 – Log-safari og makker-analyse (45 min)
 
-**Mål:** Blive fortrolig med hvor logfiler ligger, og hvordan de er opbygget, på eget operativsystem.
+**Mål:** Blive fortrolig med hvor logfiler ligger, hvordan de er opbygget — og analysere et logudsnit, man ikke selv har produceret.
 
 1. Find logfilerne på din maskine:
    - **Windows:** `Event Viewer` (kør: `eventvwr.msc`) — se især *Windows Logs* → *System* og *Application*.
@@ -18,39 +18,23 @@
    - **Linux:** `less /var/log/syslog` eller `journalctl --since "1 hour ago"`; gennemgå også `/var/log/` med `ls -l`.
 2. Notér individuelt: Hvor ligger filerne? Hvad hedder de? Hvad er formatet (tekst, XML, tidsstempel, alvorlighedsgrad)?
 3. Find én konkret hændelse fra det seneste døgn, som du selv har forårsaget (login, fejlbesked, opdatering).
-4. Byt skærm med makkeren: Forklar — uden at røre tastaturet — hvor din hændelse ligger, og hvad den betyder.
+4. **Eksportér et udsnit** af en log (fx de seneste 50–100 linjer, eller en eksport fra Event Viewer som `.txt`/`.evtx`).
+5. **Byt fil med makkeren.** Ejeren giver ingen hjælp under analysen.
+6. Analysér makkerens udsnit: Lav en tidslinje med de 3–5 vigtigste linjer. Identificér fejl, advarsler og eventuelle uregelmæssigheder.
+7. Skriv en kort hændelsesrapport (5–8 linjer): hvad skete der, hvornår, hvor alvorligt, og hvad vil du undersøge næste gang.
+8. Gennemgå rapporten med makkeren: Var analysen korrekt, eller var der noget i loggen, som du tolkede forkert?
 
-**Leverance:** Notat på 3–5 linjer pr. person: sti til loggen samt hændelsen fortolket med egne ord.
+**Leverance:** Notat (3–5 linjer pr. person) samt tidslinje og hændelsesrapport. Diskuter til sidst: Hvilke oplysninger kunne en uvedkommende udlede af det samme udsnit?
 
 ---
 
 ## Pause 1 (10 min) — Opsamling i plenum
 
-Hvad er den største forskel på logformaterne på Windows, macOS og Linux? Hvilket OS logfæster mest — og hvad betyder det for efterforskning?
+Hvad er den største forskel på logformaterne på Windows, macOS og Linux? Hvilket OS logfæster mest — og hvad betyder det for efterforskning? Hvorfor tolkede nogen par loggen forkert — og hvordan stillede man de rigtige spørgsmål uden at afsløre svaret?
 
 ---
 
-## Øvelse 2 – Makker-analysen: Læs en fremmed log (30 min)
-
-**Mål:** Analysere et logudsnit, man ikke selv har produceret.
-
-1. Eksportér et udsnit af en log fra øvelse 1 (fx de seneste 50–100 linjer, eller en eksport fra Event Viewer som `.txt`/`.evtx`).
-2. Byt fil med makkeren. Ejeren giver ingen hjælp under analysen.
-3. Analysér makkerens udsnit: Lav en tidslinje med de 3–5 vigtigste linjer. Identificér fejl, advarsler og eventuelle uregelmæssigheder.
-4. Skriv en kort hændelsesrapport (5–8 linjer): hvad skete der, hvornår, hvor alvorligt, og hvad vil du undersøge næste gang.
-5. Gennemgå rapporten med makkeren: Var analysen korrekt, eller var der noget i loggen, som du tolkede forkert?
-
-**Leverance:** Tidslinje og hændelsesrapport. Diskuterer til sidst: Hvilke oplysninger kunne en uvedkommende udlede af det samme udsnit?
-
----
-
-## Pause 2 (10 min) — Opsamling i plenum
-
-Kort fælles opsamling: Hvorfor tolkede nogen par loggen forkert? Hvilke fejltyper var sværest at identificere? Afrunding af makkerens rolle: hvordan stillede man de rigtige spørgsmål uden at afsløre svaret?
-
----
-
-## Øvelse 3 – Fjernstyring: Find makkerens logs med AnyDesk eller TeamViewer (30 min)
+## Øvelse 2 – Fjernstyring: Find makkerens logs med AnyDesk eller TeamViewer (45 min)
 
 **Mål:** Navigere i logfiler på en maskine, man ikke sidder ved, via et fjernstyringsværktøj — og bruge operativsystemets egne kommandoer til at finde loggene.
 
@@ -70,13 +54,13 @@ Kort fælles opsamling: Hvorfor tolkede nogen par loggen forkert? Hvilke fejltyp
 
 ---
 
-## Pause 3 (10 min) — Opsamling i plenum
+## Pause 2 (10 min) — Opsamling i plenum
 
 Hvad er forskellen på at sidde ved og at fjernstyre en maskine? Hvilke tilladelser giver man væk, når man deler sit ID og sin adgangskode — og hvorfor er det vigtigt, at værktøjet afinstalleres efter brug? Brug pausen til at sikre, at afinstallationen er gennemført på begge maskiner.
 
 ---
 
-## Øvelse 4 – Backup og verificering: Hash og diff af logfiler (30 min)
+## Øvelse 3 – Backup og verificering: Hash og diff af logfiler (45 min)
 
 **Mål:** Tage backup af logfiler og verificere med hash og diff, at filer er ændret — og hvad ændringen indeholder.
 
@@ -101,11 +85,63 @@ Hvad er forskellen på at sidde ved og at fjernstyre en maskine? Hvilke tilladel
 
 ---
 
-## Aflevering på Moodle
+# Ekstraopgaver: Loganalyse med AI (til sidst)
+
+Udføres til sidst, hvis tiden tillader — ca. 15 minutter pr. opgave. Der bruges en AI-assistent (fx Mistral Vibe eller et tilsvarende værktøj godkendt af læreren).
+
+**Fælles regel:** Intet logudsnit indsættes i en AI, før det er anonymiseret (ekstraopgave 1). Der føres **prompt-log** for hver opgave: hvilke prompts blev brugt, hvad svarede AI'en — og ét konkret eksempel på, hvor AI'en tog fejl.
+
+## Ekstraopgave 1 – Anonymisering før AI (15 min)
+
+**Mål:** Fjerne persondata fra et logudsnit, før det deles med en AI — og forstå, hvilke felter der bærer hvilke oplysninger.
+
+1. Tag udsnit fra øvelse 1 (50–100 linjer). Logfiler indeholder typisk brugernavne, IP-adresser og hostnames — intet af dette må sendes til en AI.
+2. Anonymisér udsnittet med operativsystemets indbyggede kommandoer:
+   - **Linux:** `sed -E 's/([0-9]{1,3}\.){3}[0-9]{1,3}/X.X.X.X/g' udsnit.txt > udsnit_anonym.txt` og `sed -i 's/<dit-brugernavn>/BRUGER/g' udsnit_anonym.txt`
+   - **macOS:** samme kommandoer, men `sed -i ''` ved redigering i filen.
+   - **Windows (PowerShell):** `(Get-Content udsnit.txt) -replace '(\d{1,3}\.){3}\d{1,3}','X.X.X.X' -replace '<dit-brugernavn>','BRUGER' | Set-Content udsnit_anonym.txt`
+3. **Kontroller resultatet:** Søg efter dit navn, din IP og dit hostname i den anonymiserede fil (`grep -i <navn> udsnit_anonym.txt` / `Select-String -Pattern <navn> udsnit_anonym.txt`). Intet identificerende må være tilbage.
+
+**Leverance:** Anonymiseret udsnit samt de anvendte kommandoer.
+
+## Ekstraopgave 2 – AI som ordbog (15 min)
+
+**Mål:** Bruge AI til at forstå logformatets opbygning — og verificere forklaringen.
+
+1. Indsæt én anonymiseret loglinje fra ekstraopgave 1 i AI'en, og bed den forklare hvert felt "som til en ny studerende".
+2. Verificér mindst ét af AI'ens forklaringer — mod selve loggen eller operativsystemets dokumentation.
+3. Var der felter, AI'en ikke kunne forklare — eller forklarede forkert?
+
+**Leverance:** Feltforklaring samt notat om, hvor og hvordan forklaringen blev verificeret.
+
+## Ekstraopgave 3 – AI som rival, ikke assistent (15 min)
+
+**Mål:** Sammenligne egen analyse med AI'ens — og verificere AI'ens udsagn mod råloggen.
+
+1. Du og AI'en analyserer **hver for sig** det samme anonymiserede udsnit fra ekstraopgave 1: tidslinje og de vigtigste hændelser.
+2. Sammenlign de to analyser: Hvor er I enige? Hvor uenige?
+3. Indsæt begge analyser, og bed AI'en dømme: "Hvem har ret — og hvorfor?"
+4. **Verificér dommen mod råloggen.** Kræv, at AI'en citerer linjenumre for sine påstande, og kontrollér hver citation. En citation, der ikke findes i loggen, er en hallucination — notér den i prompt-loggen.
+
+**Leverance:** Sammenligning af de to analyser samt liste over verificerede og afkræftede citater.
+
+## Ekstraopgave 4 – AI-agent og fjernadgang (10 min, diskussion)
+
+**Mål:** Reflektere over AI-agenter i systemadministration på baggrund af øvelse 2.
+
+1. Diskuter parvis og skriv en kort stillingtagen (5–8 linjer): **Ville du give en AI-agent fjernadgang til din maskine? Hvad må den have lov til — og hvad aldrig?**
+2. Understøt svaret med konkrete erfaringer fra øvelse 2: Hvilke tilladelser gav I væk med ID og adgangskode — og hvad kunne en automatiseret aktør have gjort med dem?
+
+**Leverance:** Skriftlig stillingtagen.
+
+---
+
+# Aflevering på Moodle
 
 Samlet aflevering uploades på Moodle senest ved øvelsesperiodeens afslutning (én aflevering pr. par):
 
-1. Notat fra øvelse 1 (begge persons noter)
-2. Tidslinje og hændelsesrapport fra øvelse 2
-3. Tre fund samt refleksion fra øvelse 3 (begge roller) + bekræftelse af, at fjernstyringsværktøjet er afinstalleret
-4. Hash-tabel og diff-uddrag fra øvelse 4
+1. Notat, tidslinje og hændelsesrapport fra øvelse 1
+2. Tre fund samt refleksion fra øvelse 2 (begge roller) + bekræftelse af, at fjernstyringsværktøjet er afinstalleret
+3. Hash-tabel og diff-uddrag fra øvelse 3
+4. Udførte ekstraopgaver: anonymiseret udsnit, feltforklaring, rival-sammenligning og stillingtagen
+5. Prompt-log: anvendte prompts, AI-svar og ét konkret eksempel på, hvor AI'en tog fejl
