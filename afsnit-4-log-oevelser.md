@@ -1,6 +1,10 @@
 # Log-øvelser: Find, læs og verificere logfiler — med AI-ekstraopgaver
 
-**Hold:** parvis (2 studerende) · **Tid:** Ca. 3 × 45 minutter med 10 minutters pause mellem øvelserne **Udstyr:** egne Windows-, macOS- eller Linux-maskiner
+**Hold:** parvis (2 studerende)
+
+**Tid:** Ca. 3 × 45 minutter med 10 minutters pause mellem øvelserne
+
+**Udstyr:** egne Windows-, macOS- eller Linux-maskiner
 
 **Læringsudbytte:** Efter øvelserne kan I finde og læse logfiler på Windows, macOS og Linux, og bruge AI som analyseværktøj samt verificere AI'ens output.
 
